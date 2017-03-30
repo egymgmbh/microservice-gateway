@@ -9,7 +9,7 @@ How to combine multiple front-end web services on one web page.
 
 
 ## Solution
-This Projects provides a solution to the to the problem of combining front end microservices. 
+This Project provides a solution to the to the problem of combining front end microservices. 
 
 ![solution](https://cloud.githubusercontent.com/assets/15627894/24502586/ba45dc18-154e-11e7-8afb-eb18158ae55f.png)
 
@@ -24,4 +24,19 @@ The `Component` are included in the `App` using three different approaches
 
 The Project also includes YAML-Files to run everything on a Kubernetes Cluster.
 
-The Project was created in September 2016 as part of the eGym 10 % Week.
+
+## Used Technologies
+The Project makes use of the these technologies:
+* nginx
+* Kubernetes
+* Docker
+* YAML
+* HTML
+* Bootstrap
+* JavaScript, JQuery
+* Server Side Includes
+* PHP
+
+
+## Credits
+The Project was created in September 2016 as part of [eGym's 10 % Week](https://github.com/egymgmbh).
