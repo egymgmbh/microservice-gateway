@@ -22,8 +22,6 @@ The `Components` are included in the `App` using three different approaches
 * HTML Imports from Web Components
 * HTML Imports with [Polymer](https://www.polymer-project.org/)
 
-The Project also includes YAML-Files to run everything on a Kubernetes Cluster.
-
 
 ## Used Technologies
 The Project makes use of the these technologies:
@@ -37,6 +35,35 @@ The Project makes use of the these technologies:
 * Server Side Includes
 * PHP
 
+## How to Start up the Services locally
+
+Build the Docker Files:
+
+`docker build -t app:latest ./app/`
+
+`docker build -t ssi:latest ./components/ssi/`
+
+`docker build -t polymer:latest ./components/polymer/`
+
+`docker build -t htmlimport:latest ./components/html-import/`
+
+Run the Docker Files:
+
+`docker run -d --name ssi ssi:latest`
+
+`docker run -d --name polymer polymer:latest`
+
+`docker run -d --name htmlimport htmlimport:latest`
+
+`docker run -d --name app --link ssi:ssi --link htmlimport:htmlimport --link polymer:polymer -p 8080:80 app:latest`
+
+Open in Chrome: [localhost:8080](http://localhost:8080)
+
+Every Component has a little form which performs a post to the microservice in the back and displays the result.
+
+## How to Start up the Services on Kubernetes
+
+The Project also includes YAML-Files to run everything on a Kubernetes Cluster.
 
 ## Credits
 The Project was created in September 2016 as part of [eGym's 10 % Week](https://github.com/egymgmbh).
