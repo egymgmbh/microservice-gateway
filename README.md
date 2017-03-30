@@ -8,16 +8,16 @@ Imagine you're developing a Software that makes use of the Microservice architec
 How to combine multiple front-end web services on one web page.
 
 
-## Solution
+## Project
 This Project provides a solution to the to the problem of combining front end microservices. 
 
 ![solution](https://cloud.githubusercontent.com/assets/15627894/24502586/ba45dc18-154e-11e7-8afb-eb18158ae55f.png)
 
 *A user accessing multiple front end microservices via a single webpage*
 
-The Project consists of three nginx Server, a `App` and a three `Compoments`. 
+The Project consists of four microservices, a `App` and a three `Compoments`. 
 
-The `Component` are included in the `App` using three different approaches
+The `Components` are included in the `App` using three different approaches
 * Server Side Includes
 * HTML Imports from Web Components
 * HTML Imports with [Polymer](https://www.polymer-project.org/)
