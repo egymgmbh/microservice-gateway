@@ -1,18 +1,9 @@
-<link rel="import" href="/remote/polymer/polymer/polymer.html">
+<link rel="import" href="https://rawgit.com/Download/polymer-cdn/master/lib/polymer/polymer.html">
 
 <dom-module id="application-demo-app">
   	<template>
-    	<style>
-      	:host {
-        	display: block;
-      	}
-
-      	.grey-div {
-      		background-color: grey;
-      	}
-    	</style>
-    	<div class="grey-div">
-    	<p>This is a app served by component.</p>
+    	<div>
+    	<p>This is a app served by component "polymer".</p>
 
 		<form id="polymer-form">
 		  	First name:<br>
@@ -30,9 +21,7 @@
 
 	<script>
     Polymer({
-
     	is: 'application-demo-app',
-
     	properties: {
         	prop1: {
           	type: String,
@@ -43,7 +32,6 @@
 	$(document).ready(function() {
 		$("#polymer-form").submit(function(event) {
 			var url = "/remote/polymer/result.php"
-
 			$.ajax({
 				type: "POST",
 				url: url,
