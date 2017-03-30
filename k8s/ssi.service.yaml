@@ -1,0 +1,12 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ssi
+  labels:
+    name: ssi
+spec:
+  ports:
+  - port: 80
+  selector:
+    name: ssi

@@ -1,0 +1,18 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: app
+    spec:
+      containers:
+      - name: proxy
+        image: <path-to-your-container>/app:latest
+        ports:
+        - containerPort: 80
+          name: http

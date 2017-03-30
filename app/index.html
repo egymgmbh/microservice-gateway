@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A App</title>
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		body {
+			width: 1170px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.component-container {
+			box-shadow: 0px 3px 8px grey;
+			padding: 20px;
+			margin-top: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Manager Dashboard</h1>
+	<p>This is a Template Page for a Manager Microservice</p>
+	<p>The Manager consists of different Components, each running as own Microservices</p>
+	<p>Here you see various approaches of "importing" or "including" the Snippets.</p>
+
+	<h3>1. With SSI and nginx as Reverse Proxy</h3>
+	<div class="component-container">
+		<div class="ssi-component-container">
+			<!--#include virtual="/remote/ssi/component.html" -->
+		</div>
+	</div>
+
+	<h3>2. With HTML Imports (from Web Components) and nginx as Reverse Proxy</h3>
+	<p >"Experimental Web Platform feature" Flag in Google Chrome must be enabled. (Goto chrome://flags/)</p>
+	<!-- see http://www.html5rocks.com/en/tutorials/webcomponents/imports/ -->
+	<link rel="import" href="/remote/htmlimport/component.html">
+	<div class="component-container">
+		<div class="html-import-component-container">
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var link = document.querySelector('link[rel="import"]');
+				var template = link.import.querySelector('template');
+				var clone = document.importNode(template.content, true);
+				document.querySelector(".html-import-component-container").appendChild(clone);
+			});
+		</script>
+	</div>
+
+	<h3>3. With HTML Imports, Polymer and nginx as Reverse Proxy</h3>
+	<p>See https://github.com/webcomponents/webcomponentsjs#browser-support</p>
+	<script src="/webcomponentsjs/webcomponents-lite.js"></script>
+	<link rel="import" href="/remote/polymer/component.html">
+	<div class="component-container">
+		<div class="polymer-component-container">
+			<application-demo-app></application-demo-app>
+		</div>
+	</div>
+
+</body>
+<script>
+
+</script>
+</html>

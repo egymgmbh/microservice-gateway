@@ -1,0 +1,35 @@
+<template>
+	<div id="htmlimport-component-remote">
+		<p>This is a app served by component.</p>
+
+		<form id="htmlimport-form">
+		  	First name:<br>
+		  	<input type="text" name="firstname"><br>
+		  	Last name:<br>
+		  	<input type="text" name="lastname">
+		  	<input type="submit" value="go">
+		</form> 
+
+		<div id="htmlimport-response"><p>Here goes the AJAX response</p></div>
+
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#htmlimport-form").submit(function(event) {
+				var url = "/remote/htmlimport/result.php"
+
+				$.ajax({
+					type: "POST",
+					url: url,
+					data: $("#htmlimport-form").serialize(),
+					success: function(data) {
+						$("#htmlimport-response").html(data);
+					}
+				});
+				event.preventDefault();
+			});
+		});        
+	</script>
+</template>

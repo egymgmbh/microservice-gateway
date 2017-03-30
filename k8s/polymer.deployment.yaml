@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: polymer
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: polymer
+    spec:
+      containers:
+      - name: polymer
+        image: <path-to-your-container>/polymer:latest

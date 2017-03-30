@@ -1,0 +1,12 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: htmlimport
+  labels:
+    name: htmlimport
+spec:
+  ports:
+  - port: 80
+  selector:
+    name: htmlimport

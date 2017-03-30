@@ -1,0 +1,38 @@
+<style>
+	div {
+		background-color: yellow;
+	}
+</style>
+
+<div>
+	<p>This is a app served by component.</p>
+
+	<form id="ssi-form">
+	  	First name:<br>
+	  	<input type="text" name="firstname"><br>
+	  	Last name:<br>
+	  	<input type="text" name="lastname">
+	  	<input type="submit" value="go">
+	</form> 
+
+	<div id="ssi-response"><p>Here goes the AJAX response</p></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#ssi-form").submit(function(event) {
+				var url = "/remote/ssi/result.php"
+
+				$.ajax({
+					type: "POST",
+					url: url,
+					data: $("#ssi-form").serialize(),
+					success: function(data) {
+						$("#ssi-response").html(data);
+					}
+				});
+				event.preventDefault();
+			});
+		});        
+	</script>
+</div>

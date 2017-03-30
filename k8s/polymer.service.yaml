@@ -1,0 +1,12 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: polymer
+  labels:
+    name: polymer
+spec:
+  ports:
+  - port: 80
+  selector:
+    name: polymer

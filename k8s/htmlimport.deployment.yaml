@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: htmlimport
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: htmlimport
+    spec:
+      containers:
+      - name: component
+        image: <path-to-your-container>/htmlimport:latest

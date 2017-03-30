@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ssi
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: ssi
+    spec:
+      containers:
+      - name: ssi
+        image: <path-to-your-container>/ssi:latest
