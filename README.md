@@ -1,13 +1,19 @@
 # microservice-gateway
 
 ## Context
-Imagine you're developing a Software that makes use of the Microservice architecture pattern. You might end up having several front end microservices. You might also want to provide a single point of entry for your user, to hide the microservice architecture for the user and avoid having the user to deal with several addresses.
+Imagine you're developing a Software that makes use of the Microservice architecture pattern. You might end up having several front end microservices with their respective addresses. This is is bad from a UX perspective. How can you hide the microservice architecture for the user and provide a single point of entry to your services?
+
 
 ## Problem
 How to combine multiple front-end web services on one web page.
 
+
 ## Solution
-This Project shows three possible solutions to the problem of combining front end microservices. 
+This Projects provides a solution to the to the problem of combining front end microservices. 
+
+![solution](https://cloud.githubusercontent.com/assets/15627894/24502586/ba45dc18-154e-11e7-8afb-eb18158ae55f.png)
+
+*A user accessing multiple front end microservices via a single webpage*
 
 The Project consists of three nginx Server, a `App` and a three `Compoments`. 
 
@@ -19,6 +25,3 @@ The `Component` are included in the `App` using three different approaches
 The Project also includes YAML-Files to run everything on a Kubernetes Cluster.
 
 The Project was created in September 2016 as part of the eGym 10 % Week.
-
-The Presentation can be found here: https://docs.google.com/presentation/d/1_mTztIQ7WKVt4SlIcKsTWOAIIoL5cMMg308dBDrxvqY/edit#slide=id.p
-
